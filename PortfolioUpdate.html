@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Form</title>
+    <style>
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .navbar a {
+            float: left;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            font-size: 18px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        .navbar a:hover,
+        .dropdown:hover .dropbtn {
+            background-color: red;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: rgb(5, 7, 23);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #83dff4;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: blueviolet;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            background-color: lavender;
+            padding: 50px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea,
+        input[type="number"],
+        input[type="date"] {
+            width: calc(100% - 5px);
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            display: inline-block;
+        }
+
+        textarea {
+            height: 150px;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        /* Hover message styling */
+        .hover-message {
+            display: none;
+            color: #ff6347;
+            font-size: 14px;
+            font-weight: bold;
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+        }
+
+        /* Show the hover message when hovering over the input field */
+        .skip-container:hover .hover-message {
+            display: block;
+        }
+
+    </style>
+      <title>Update Portfolio Form</title>
+
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="login.html#login" style="font-size: 18px;margin-bottom: 15px;">Login</a>
+        <a href="reg.html#registration" style="font-size: 18px;">Registration</a>
+        <a href="updatepsw.html#update" style="font-size: 18px;">Update</a>
+        <a href="retrieve.html#retrieve" style="font-size: 18px;">Retrieve</a>
+        <a href="delete.html#delete" style="font-size: 18px;">Delete</a>
+        <div class="dropdown">
+            <button class="dropbtn">Portfolio Form <i class="fa fa-caret-down"></i></button>
+            <div class="dropdown-content">
+                <a href="P2.html#page2">Portfolio Form</a>
+                <a href="PortfolioUpdate.html#PortfolioUpdate">Update Portfolio</a>
+                <a href="PortfolioDelete.html#PortfolioDelete">Delete Portfolio</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Update Portfolio Form</h2>
+        <h3 style="text-align: center;">Short Information</h3>
+        <form action="update.php" method="POST" class="form" enctype="multipart/form-data">
+            <label for="ID">ID</label>
+            <input type="text" id="ID" name="ID" required>
+            <label for="Full_Name">Full Name</label>
+            <input type="text" id="Full_Name" name="Full_Name" required>
+            <label for="contact_info">Contact Info</label>
+            <input type="text" id="contact_info" name="contact_info" required>
+            <label for="biography">Biography</label>
+            <input type="text" id="biography" name="biography" required>
+            <label for="photo">Photo</label>
+            <input type="file" name="photo" accept="image/*" required>
+            <h3 style="text-align: center;">Skills</h3>
+            <label for="soft_skills">Soft Skills</label>
+            <input type="text" id="soft_skills" name="soft_skills" required>
+            <label for="technical_skills">Technical Skills</label>
+            <input type="text" id="technical_skills" name="technical_skills" required>
+            <h3 style="text-align: center;">Academic Background (optional)</h3>
+
+            <div class="skip-container" style="position: relative;">
+                <label for="institute">Institute</label>
+                <input type="text" id="institute" name="institute">
+                <span class="hover-message">Skip</span>
+            </div>
+
+            <div class="skip-container" style="position: relative;">
+                <label for="degree">Degree</label>
+                <input type="text" id="degree" name="degree">
+                <span class="hover-message">Skip</span>
+            </div>
+
+            <div class="skip-container" style="position: relative;">
+                <label for="year">Year</label>
+                <input type="text" id="year" name="year">
+                <span class="hover-message">Skip</span>
+            </div>
+
+            <div class="skip-container" style="position: relative;">
+                <label for="grade">Grade</label>
+                <input type="text" id="grade" name="grade">
+                <span class="hover-message">Skip</span>
+            </div>
+            
+
+            <h3 style="text-align: center;">Work Experience</h3>
+            <label for="company_name">Company Name</label>
+            <input type="text" id="company_name" name="company_name" required>
+            <label for="job_duration">Job Duration</label>
+            <input type="text" id="job_duration" name="job_duration" required>
+            <label for="job_responsibility">Job Responsibility</label>
+            <input type="text" id="job_responsibility" name="job_responsibility" required>
+
+            <h3 style="text-align: center;">Previous Projects or Publications (optional)</h3>
+            <div class="skip-container" style="position: relative;">
+                <label for="previous_project">Previous Project</label>
+                <input type="text" id="previous_project" name="previous_project">
+                <span class="hover-message">Skip</span>
+            </div>
+            <div class="skip-container" style="position: relative;">
+                <label for="previous_publication">Previous Publication</label>
+                <input type="text" id="previous_publication" name="previous_publication">
+                <span class="hover-message">Skip</span>
+            </div>
+            
+            
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+</body>
+
+</html>

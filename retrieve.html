@@ -1,0 +1,180 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <style>
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .navbar a {
+            float: left;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            font-size: 18px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        .navbar a:hover,
+        .dropdown:hover .dropbtn {
+            background-color: red;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: rgb(5, 7, 23);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #83dff4;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            background-color: lavender;
+            padding: 50px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea,
+        input[type="number"],
+        input[type="date"] {
+            width: calc(100% - 5px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            display: inline-block;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn-container {
+            margin-top: 20px;
+        }
+
+        .btn {
+            background-color: #04AA6D;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px;
+            border: none;
+            cursor: pointer;
+            width: 45%;
+            display: inline-block;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <a href="login.html#login">Login</a>
+        <a href="reg.html#registration">Registration</a>
+        <a href="updatepsw.html#update">Update</a>
+        <a href="retrieve.html#retrieve">Retrieve</a>
+        <a href="delete.html#delete">Delete</a>
+        <div class="dropdown">
+            <button class="dropbtn">Portfolio Form <i class="fa fa-caret-down"></i></button>
+            <div class="dropdown-content">
+                <a href="P2.html#page2">Portfolio Form</a>
+                <a href="PortfolioUpdate.html#PortfolioUpdate">Update Portfolio</a>
+                <a href="PortfolioDelete.html#PortfolioDelete">Delete Portfolio</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 style="text-align: center;">Retrieve Data</h2>
+        <p><b>Want to Retrieve Data?</b></p>
+        <div class="btn-container">
+            <button class="btn" onclick="location.href='retrieve.php'">Yes</button>
+            <button class="btn" onclick="location.href='login.html'">No</button>
+        </div>
+        <p>Don't have an account? <a href="reg.html">Register here</a></p>
+        <p id="error-message"></p>
+    </div>
+</body>
+</html>
+
+
+</body>
+</html>

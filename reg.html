@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .navbar {
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    .navbar a {
+      float: left;
+      font-size: 16px;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .dropdown {
+      float: left;
+      overflow: hidden;
+    }
+
+    .dropdown .dropbtn {
+      font-size: 18px;
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: inherit;
+      margin: 0;
+    }
+
+    .navbar a:hover,
+    .dropdown:hover .dropbtn {
+      background-color: red;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      float: none;
+      color: rgb(5, 7, 23);
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #83dff4;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+    }
+
+    form {
+      border: 3px solid #f1f1f1;
+    }
+
+    input[type=text],
+    input[type=password] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #04AA6D;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    .cancelbtn {
+      width: 100px;
+      padding: 10px 100px;
+      background-color: #f44336;
+    }
+
+    .container {
+      width: 600px;
+      padding: 50px;
+      margin-left: 450px;
+    }
+
+    span.psw {
+      float: right;
+      padding-top: 16px;
+    }
+
+    @media screen and (max-width: 300px) {
+      span.psw {
+        display: block;
+        float: none;
+      }
+
+      .cancelbtn {
+        width: 50%;
+      }
+    }
+
+    .password-toggle-icon {
+      position: absolute;
+      top: 62%;
+      right: 450px;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+
+    .password-toggle-icon i {
+      font-size: 18px;
+      line-height: 1;
+      color: #333;
+      transition: color 0.3s ease-in-out;
+      margin-bottom: 20px;
+    }
+
+    .password-toggle-icon i:hover {
+      color: #000;
+    }
+  </style>
+  <title>Registration Page</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <div class="navbar">
+    <a href="login.html#login" style="font-size: 18px;margin-bottom: 15px;">Login</a>
+    <a href="reg.html#registration" style="font-size: 18px;">Registration</a>
+    <a href="updatepsw.html#update" style="font-size: 18px;">Update</a>
+    <a href="retrieve.html#retrieve" style="font-size: 18px;">Retrieve</a>
+    <a href="delete.html#delete" style="font-size: 18px;">Delete</a>
+    <div class="dropdown">
+      <button class="dropbtn">Portfolio Form <i class="fa fa-caret-down"></i></button>
+      <div class="dropdown-content">
+        <a href="P2.html#page2">Portfolio Form</a>
+        <a href="PortfolioUpdate.html#PortfolioUpdate">Update Portfolio</a>
+        <a href="PortfolioDelete.html#PortfolioDelete">Delete Portfolio</a>
+      </div>
+    </div>
+  </div>
+  <h2 style="text-align: center;margin-top: 80px;">Registration Form</h2>
+
+  <form action="reg.php" method="post">
+    <div class="container">
+      <label for="ID"><b>ID</b></label>
+      <input type="text" placeholder="Enter ID" name="ID" required>
+
+      <label for="user_name"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="user_name" required>
+
+      <label for="password"><b>Password</b></label>
+      <input type="password" name="password" id="password" required="" />
+      <span class="password-toggle-icon"><i class="fas fa-eye"></i></span>
+
+      <button type="submit">Register</button>
+    </div>
+  </form>
+  <script src="script.js"></script>
+  <script>
+    const passwordField = document.getElementById("password");
+    const togglePassword = document.querySelector(".password-toggle-icon i");
+
+    togglePassword.addEventListener("click", function () {
+      if (passwordField.type === "password") {
+        passwordField.type = "text";
+        togglePassword.classList.remove("fa-eye");
+        togglePassword.classList.add("fa-eye-slash");
+      } else {
+        passwordField.type = "password";
+        togglePassword.classList.remove("fa-eye-slash");
+        togglePassword.classList.add("fa-eye");
+      }
+    });
+  </script>
+</body>
+
+</html>
